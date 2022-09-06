@@ -43,3 +43,4 @@ print("hello world")
 ![这是图片](https://www.udacity.com/blog/wp-content/uploads/2020/11/Hello-World_Blog-scaled.jpeg)
 ~~我是sb~~
 
+$\alpha \in$
