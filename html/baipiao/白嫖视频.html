@@ -72,14 +72,13 @@ href="https://www.iqiyi.com/v_1uyrdp7ldhk.html">极限挑战第8季
 <h1
 id="注本教程使用的是pc-windows10操作系统网页操作原理为访问服务器下载">注：本教程使用的是PC
 Windows10操作系统，网页操作，原理为访问服务器下载</h1>
-<p>有三个工具可以进行操作 <del>（还有很多三个够用了）</del></p>
+<p>有两个工具可以进行操作 <del>（还有很多两个够用了）</del></p>
 <ol type="1">
 <li>you-get</li>
 <li>网页扩展</li>
-<li>AG下载器</li>
 </ol>
 <p><strong>you-get</strong></p>
-<p>you-get是一款命令行软件，请用过dos或cmd命令基础较好的使用，基础不好的的建议使用方法2和方法3</p>
+<p>you-get是一款命令行软件，请用过dos或cmd命令基础较好的使用，基础不好的的建议使用方法2(或者看我的Windows/cmd命令)</p>
 <p>简单介绍，<a href="https://github.com/soimort/you-get">you-get</a>
 是soimort在github上发布的下载器</p>
 <p><del>我们可以使用git clone(对新手十分不友好)</del></p>
@@ -87,10 +86,103 @@ Windows10操作系统，网页操作，原理为访问服务器下载</h1>
 <p>配置好之后我们打开终端输入</p>
 <pre><code>pip insall you-get</code></pre>
 <p>进行安装 完成之后输入</p>
-<pre><code>you-get --help</code></pre>
+<pre><code>you-get --version</code></pre>
 <p>查看是否安装成功</p>
 <p>如果显示"'you-get'
 不是内部或外部命令，也不是可运行的程序或批处理文件。"去看我的Windows/环境变量教程</p>
-<p><del>（time：2022.9.17 挖了好多坑还没填呢555）</del></p>
+<p><del>（time：2022年9月17日 挖了好多坑还没填呢555）</del></p>
+<blockquote>
+<p>you-get常用命令</p>
+</blockquote>
+<ol type="1">
+<li>you-get -i "链接" //显示资源信息</li>
+<li>you-get -o "路径" //下载目录</li>
+<li>you-get "链接" //从该网站以默认选项下载视频</li>
+<li>you-get --format="格式" "链接" //从该网站下载信息为xxx的文件</li>
+</ol>
+<p>还有很多命令，可以通过</p>
+<pre><code>you-get --help</code></pre>
+<p><del>（简称：剩下的基本没用）</del></p>
+<p>OK开始实践，我们以<a
+href="https://www.bilibili.com/video/BV1p7411Y7BC">最强自夸王！！！！！</a>这个视频为例</p>
+<p>首先输入</p>
+<pre><code>you-get -i https://www.bilibili.com/video/BV1p7411Y7BC </code></pre>
+<p>查看资源信息</p>
+<pre><code>site:                Bilibili
+title:               最强自夸王！！！！！
+streams:             # Available quality and codecs
+    [ DASH ] ____________________________________
+    - format:        dash-flv
+      container:     mp4
+      quality:       高清 1080P
+      size:          46.6 MiB (48884738 bytes)
+    # download-with: you-get --format=dash-flv [URL]
+
+    - format:        dash-flv720
+      container:     mp4
+      quality:       高清 720P
+      size:          24.7 MiB (25884395 bytes)
+    # download-with: you-get --format=dash-flv720 [URL]
+
+    - format:        dash-flv480
+      container:     mp4
+      quality:       清晰 480P
+      size:          18.6 MiB (19523818 bytes)
+    # download-with: you-get --format=dash-flv480 [URL]
+
+    - format:        dash-flv360
+      container:     mp4
+      quality:       流畅 360P
+      size:          11.6 MiB (12120166 bytes)
+    # download-with: you-get --format=dash-flv360 [URL]
+
+    [ DEFAULT ] _________________________________
+    - format:        flv
+      container:     flv
+      quality:       高清 1080P
+      size:          57.2 MiB (60020043 bytes)
+    # download-with: you-get --format=flv [URL]
+
+    - format:        flv720
+      container:     flv
+      quality:       高清 720P
+      size:          45.1 MiB (47333500 bytes)
+    # download-with: you-get --format=flv720 [URL]
+
+    - format:        flv480
+      container:     flv
+      quality:       清晰 480P
+      size:          25.5 MiB (26789679 bytes)
+    # download-with: you-get --format=flv480 [URL]
+
+    - format:        flv360
+      container:     flv
+      quality:       流畅 360P
+      size:          11.6 MiB (12184327 bytes)
+    # download-with: you-get --format=flv360 [URL]</code></pre>
+<p>1年前我用的老版本只有一种，现在有两种分别是什么意思呢</p>
+<p>DASH
+下载下来的是MP4格式，如果直接使用的话会分别下载video（视频）和audio（音频），如果电脑上有ffmpeg的话就会直接合并为一个MP4文件，如果没有的话就按照DEFAULT下载一个flv文件，然后再用potplayer或vlc等等播放器打开就行</p>
+<pre><code>DASH：you-get --format=dash-flv https://www.bilibili.com/video/BV1p7411Y7BC
+ 
+DEFAULT：you-get --format=flv https://www.bilibili.com/video/BV1p7411Y7BC</code></pre>
+<p><del>(方法一到此结束)</del></p>
+<p><strong>网页扩展</strong></p>
+<p>简单方便，推荐，只要会用电脑就行</p>
+<p>网页扩展肯定是装在浏览器上的</p>
+<p>这里我们选择<a href="https://www.microsoft.com/edge">Microsoft
+Edge</a></p>
+<p><del>(Google
+Chrome想从应用的商店装扩展可能需要一些很刑的方法，而且好像也没有）</del></p>
+<p>打开<a
+href="https://microsoftedge.microsoft.com/addons/detail/bilibili%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B/cagicamgdlbdmonbclkpgiabbldodgae">这个链接</a>点获取然后就装就完了，装好之后再次打开B站会发现弹出来了一个页面，按照他的提示点下载就行了</p>
+<h4 id="普通视频完">普通视频，完</h4>
+<h3 id="番剧">番剧</h3>
+<p>番剧就不是普通人能看得了，普通用户只能看一两集，剩下的只有大会员才能看。</p>
+<p>怎么做呢？</p>
+<p><strong>和爱奇艺方法一样</strong></p>
+<p>不过选项更多，可以用 综合/B站 playerJY/B站</p>
+<p>那破解之后怎么下载呢 <del>（这个属于非正规网站，所以）</del> 请看<a
+href="其他.html">其他文件</a></p>
 </body>
 </html>
